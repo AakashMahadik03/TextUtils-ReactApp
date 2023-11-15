@@ -4,7 +4,7 @@ import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function TextForm() {
-  const [text,setText] = useState(" ");
+  const [text,setText] = useState("");
 
   const onChangeHandler =(event)=>{
     setText(event.target.value)
@@ -62,21 +62,21 @@ const stopSpeaking = () => {
     <div className="mb-3">
         <h3>Enter your text here</h3>
         <textarea className="form-control" value={text} onChange={onChangeHandler} id="exampleFormControlTextarea1" rows="8"></textarea>
-        <button type='button' className='btn btn-primary my-3 ' onClick={handleclean}>Clear</button>        
-        <button type='button' className='btn btn-primary my-3 mx-3' onClick={handleUpperCase}>Convert to UpperCase</button>        
-        <button type='button' className='btn btn-primary my-3 ' onClick={handleLowerCase}>Convert to LowerCase</button>        
-        <button type="button" className="btn btn-primary my-3 mx-3" onClick={handleCapitalizeWordClick}>Convert to Capitalized</button>
-        <button type="button" className="btn btn-primary my-3 " onClick={WhiteSpace}>Remove Extra Spaces</button>
-        <button type="button" className="btn btn-warning my-3 mx-3" onClick={isSpeaking ? stopSpeaking : speak}>
+        <button disabled={text.length===0} type='button' className='btn btn-primary my-3 mx-1 ' onClick={handleclean}>Clear</button>        
+        <button disabled={text.length===0} type='button' className='btn btn-primary my-3 mx-1' onClick={handleUpperCase}>Convert to UpperCase</button>        
+        <button disabled={text.length===0} type='button' className='btn btn-primary my-3 mx-1' onClick={handleLowerCase}>Convert to LowerCase</button>        
+        <button disabled={text.length===0} type="button" className="btn btn-primary my-3 mx-1" onClick={handleCapitalizeWordClick}>Convert to Capitalized</button>
+        <button disabled={text.length===0} type="button" className="btn btn-primary my-3 mx-1" onClick={WhiteSpace}>Remove Extra Spaces</button>
+        <button disabled={text.length===0} type="button" className="btn btn-warning my-3 mx-1" onClick={isSpeaking ? stopSpeaking : speak}>
         <FontAwesomeIcon icon={isSpeaking ? faStop : faPlay} /> {isSpeaking ? "Stop" : "Play"}
         </button>
 
 
     </div>
     <h4>Text Summary</h4>
-    <p>{text.length} Characters and {text.split(" ").length} Words</p>
-    <p>{0.04*(text.split(" ").length)} Min to Read</p>
-    <h4>Text Preview</h4>{text.length>0?text:"You will get your preview here"}
+    <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters</p>
+    <p>{0.04*(text.split(" ").filter((element)=>{return element.length!==0}).length)} Min to Read</p>
+    <h4>Text Preview</h4>{text.length>0?text:"Nothing to preview"}
     </div>
   )
 }

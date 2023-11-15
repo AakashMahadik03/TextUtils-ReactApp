@@ -2,6 +2,22 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Images
+
+### With impropre cases and with extra spaces.
+![Alt text](image.png)
+
+### After removing extra spaces.
+![Alt text](image-1.png)
+
+### After converting to capitalized letter.
+![Alt text](image-2.png)
+
+### Similarly it convert to upper and lower case.
+
+### It can be also used to play the entered text.
+![Alt text](image-3.png)
+
 ## Available Scripts
 
 In the project directory, you can run:
