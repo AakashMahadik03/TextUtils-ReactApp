@@ -8,7 +8,7 @@ https://aakashmahadik03.github.io/TextUtils-ReactApp/
 ## Project Images
 
 ### With impropre cases and with extra spaces.
-![Alt text](image.png)
+![Alt text](image-4.png)
 
 ### After removing extra spaces.
 ![Alt text](image-1.png)
